@@ -1,6 +1,6 @@
 ﻿<!-- code by nicsure 2024 -->
 <!-- https://www.youtube.com/nicsure -->
-        
+
 <Window x:Class="QuanshengDock.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -114,7 +114,7 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <CheckBox Name="Defocusser" Width="0" Height="0"/>
-            <TextBlock IsHitTestVisible="False" Grid.ColumnSpan="3" Text="Quansheng Dock" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,11"/>
+            <TextBlock IsHitTestVisible="False" Grid.ColumnSpan="3" Text="Qs Dock （BD8DFN 汉化）" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,11"/>
             <Grid Grid.ColumnSpan="3">
                 <Grid.ContextMenu>
                     <ContextMenu>
@@ -145,32 +145,32 @@
                 <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="6" Background="{Binding LCDBackColor.Value.Brush}" Margin="2,0,2,8" CornerRadius="10">
                     <Image Margin="5,5,5,5" Stretch="Fill" Source="{Binding LcdImage.Value}"/>
                 </Border>
-                <Frame Tag="ChannelEdit" Grid.Column="0" Grid.Row="1" Style="{StaticResource ControlButton}" Content="CHAN&#10;EDIT" />
-                <Frame Tag="10" Grid.Column="1" Grid.Row="1" Style="{StaticResource ControlButton}" Content="M  🅐" />
-                <Frame Tag="11" Grid.Column="2" Grid.Row="1" Style="{StaticResource ControlButton}" Content="↑  🅑" />
-                <Frame Tag="12" Grid.Column="3" Grid.Row="1" Style="{StaticResource ControlButton}" Content="↓  🅒" />
-                <Frame Tag="13" Grid.Column="4" Grid.Row="1" Style="{StaticResource ControlButton}" Content="EXIT 🅓" />
-                <Frame Tag="TxLock" Grid.Column="5" Grid.Row="1" Style="{StaticResource ControlButton}" Content="{Binding TxLockButtonText.Value}" />
+                <Frame Tag="ChannelEdit" Grid.Column="0" Grid.Row="1" Style="{StaticResource ControlButton}" Content="信道&#xA;管理" FontSize="4" />
+                <Frame Tag="10" Grid.Column="1" Grid.Row="1" Style="{StaticResource ControlButton}" Content="M  🅐" FontSize="4" />
+                <Frame Tag="11" Grid.Column="2" Grid.Row="1" Style="{StaticResource ControlButton}" Content="↑  🅑" FontSize="4" />
+                <Frame Tag="12" Grid.Column="3" Grid.Row="1" Style="{StaticResource ControlButton}" Content="↓  🅒" FontSize="4" />
+                <Frame Tag="13" Grid.Column="4" Grid.Row="1" Style="{StaticResource ControlButton}" Content="EXIT 🅓" FontSize="4" />
+                <Frame Tag="TxLock" Grid.Column="5" Grid.Row="1" Style="{StaticResource ControlButton}" Content="{Binding TxLockButtonText.Value}" FontSize="4" />
 
-                <Frame Tag="18" Grid.Column="0" Grid.Row="2" Style="{StaticResource ControlButton}" Content="SQL" />
-                <Frame Tag="1" Grid.Column="1" Grid.Row="2" Style="{StaticResource ControlButton}" Content="1&#10;BAND" />
-                <Frame Tag="2" Grid.Column="2" Grid.Row="2" Style="{StaticResource ControlButton}" Content="2&#10;A/B" />
-                <Frame Tag="3" Grid.Column="3" Grid.Row="2" Style="{StaticResource ControlButton}" Content="3&#10;VFO/MR" />
-                <Frame Tag="14" Grid.Column="4" Grid.Row="2" Style="{StaticResource ControlButton}" Content="*&#10;SCAN" />
-                <Frame Tag="ToggleSpectrum" Grid.Column="5" Grid.Row="2" Style="{StaticResource ControlButton}" Content="SPECT" />
+                <Frame Tag="18" Grid.Column="0" Grid.Row="2" Style="{StaticResource ControlButton}" Content="静噪" FontSize="4" />
+                <Frame Tag="1" Grid.Column="1" Grid.Row="2" Style="{StaticResource ControlButton}" Content="1&#10;频道切换" FontSize="4" />
+                <Frame Tag="2" Grid.Column="2" Grid.Row="2" Style="{StaticResource ControlButton}" Content="2&#10;A/B" FontSize="4" />
+                <Frame Tag="3" Grid.Column="3" Grid.Row="2" Style="{StaticResource ControlButton}" Content="3&#10;频率/信道" FontSize="4" />
+                <Frame Tag="14" Grid.Column="4" Grid.Row="2" Style="{StaticResource ControlButton}" Content="*&#10;扫频" FontSize="4" />
+                <Frame Tag="ToggleSpectrum" Grid.Column="5" Grid.Row="2" Style="{StaticResource ControlButton}" Content="频谱仪" FontSize="4" />
 
-                <Frame Tag="17" Grid.Column="0" Grid.Row="3" Style="{StaticResource ControlButton}" Content="💡" />
-                <Frame Tag="4" Grid.Column="1" Grid.Row="3" Style="{StaticResource ControlButton}" Content="4&#10;FC" />
-                <Frame Tag="5" Grid.Column="2" Grid.Row="3" Style="{StaticResource ControlButton}" Content="5&#10;SL/SR" />
-                <Frame Tag="6" Grid.Column="3" Grid.Row="3" Style="{StaticResource ControlButton}" Content="6&#10; TX PWR" />
-                <Frame Tag="0" Grid.Column="4" Grid.Row="3" Style="{StaticResource ControlButton}" Content="0&#10;FM" />
-                <Frame Tag="16" Grid.Column="5" Grid.Row="3" Grid.RowSpan="2" Style="{StaticResource ControlButton}" Content="P T T" />
+                <Frame Tag="17" Grid.Column="0" Grid.Row="3" Style="{StaticResource ControlButton}" Content="💡" FontSize="4" />
+                <Frame Tag="4" Grid.Column="1" Grid.Row="3" Style="{StaticResource ControlButton}" Content="4&#10;一键对频" FontSize="4" />
+                <Frame Tag="5" Grid.Column="2" Grid.Row="3" Style="{StaticResource ControlButton}" Content="5&#10;频谱仪" FontSize="4" />
+                <Frame Tag="6" Grid.Column="3" Grid.Row="3" Style="{StaticResource ControlButton}" Content="6&#10;发射功率" FontSize="4" />
+                <Frame Tag="0" Grid.Column="4" Grid.Row="3" Style="{StaticResource ControlButton}" Content="0&#10;收音机" FontSize="4" />
+                <Frame Tag="16" Grid.Column="5" Grid.Row="3" Grid.RowSpan="2" Style="{StaticResource ControlButton}" Content="P T T" FontSize="4" />
 
-                <Frame Tag="Settings" Grid.Column="0" Grid.Row="4" Style="{StaticResource ControlButton}" Content="⚙" />
-                <Frame Tag="7" Grid.Column="1" Grid.Row="4" Style="{StaticResource ControlButton}" Content="7&#10;VOX" />
-                <Frame Tag="8" Grid.Column="2" Grid.Row="4" Style="{StaticResource ControlButton}" Content="8&#10;R" />
-                <Frame Tag="9" Grid.Column="3" Grid.Row="4" Style="{StaticResource ControlButton}" Content="9&#10;CALL" />
-                <Frame Tag="15" Grid.Column="4" Grid.Row="4" Style="{StaticResource ControlButton}" Content="F&#10;  # 🔒"/>
+                <Frame Tag="Settings" Grid.Column="0" Grid.Row="4" Style="{StaticResource ControlButton}" Content="⚙" FontSize="4" />
+                <Frame Tag="7" Grid.Column="1" Grid.Row="4" Style="{StaticResource ControlButton}" Content="7&#10;声控发射" FontSize="4" />
+                <Frame Tag="8" Grid.Column="2" Grid.Row="4" Style="{StaticResource ControlButton}" Content="8&#10;倒频" FontSize="4" />
+                <Frame Tag="9" Grid.Column="3" Grid.Row="4" Style="{StaticResource ControlButton}" Content="9&#10;按键即呼" FontSize="4" />
+                <Frame Tag="15" Grid.Column="4" Grid.Row="4" Style="{StaticResource ControlButton}" Content="F&#10;  # 🔒" FontSize="4"/>
 
             </Grid>
             <Grid Name="SpectrumGrid" Grid.Column="2" Grid.Row="1">
@@ -282,40 +282,40 @@
                 <Frame Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Style="{StaticResource RaisedBorder}" />
                 <Frame Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" Style="{StaticResource RaisedBorder}" />
 
-                <Frame Grid.Column="0" Grid.Row="1" Style="{StaticResource TextLabel}" Content="Frequency" />
-                <Frame Grid.Column="0" Grid.Row="2" Style="{StaticResource TextLabel}" Content="Step Size" />
-                <Frame Grid.Column="0" Grid.Row="3" Style="{StaticResource TextLabel}" Content="Step Count" />
+                <Frame Grid.Column="0" Grid.Row="1" Style="{StaticResource TextLabel}" Content="频率" FontSize="4" />
+                <Frame Grid.Column="0" Grid.Row="2" Style="{StaticResource TextLabel}" Content="步进频率" FontSize="4" />
+                <Frame Grid.Column="0" Grid.Row="3" Style="{StaticResource TextLabel}" Content="步进计数" FontSize="4" />
 
                 <Frame Grid.Column="3" Grid.Row="1" Style="{StaticResource TextLabel}" Content="MHz" FontSize="10" />
                 <Frame Grid.Column="3" Grid.Row="2" Style="{StaticResource TextLabel}" Content="kHz" FontSize="11" />
 
-                <Frame Grid.Column="5" Grid.Row="4" Style="{StaticResource TextLabel}" Content="Floor" FontSize="9" />
-                <Frame Grid.Column="6" Grid.Row="4" Style="{StaticResource TextLabel}" Content="Amplify" FontSize="9" />
-                <Frame Grid.Column="7" Grid.Row="4" Style="{StaticResource TextLabel}" Content="Speed" FontSize="9" />
+                <Frame Grid.Column="5" Grid.Row="4" Style="{StaticResource TextLabel}" Content="灵敏度" FontSize="9" />
+                <Frame Grid.Column="6" Grid.Row="4" Style="{StaticResource TextLabel}" Content="增幅" FontSize="7" />
+                <Frame Grid.Column="7" Grid.Row="4" Style="{StaticResource TextLabel}" Content="速度" FontSize="7" />
 
 
 
-                <Frame Tag="Normalize" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="4" FontSize="3.5" Style="{StaticResource ControlButton}" Content="Normalize        " />
+                <Frame Tag="Normalize" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="4" FontSize="3.5" Style="{StaticResource ControlButton}" Content="标准化        " />
                 <Viewbox Grid.Column="4" Grid.Row="4" Stretch="Fill">
                     <ui:Indicator BorderBrush="#ff888888" BorderThickness="0.1" IsOn="{Binding SpecNorm.Value}" Width="1" Height="1" Margin="4,1.75,1.7,1.75"/>
                 </Viewbox>
 
                 <Viewbox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Stretch="Fill">
-                    <xctk:DoubleUpDown Value="{Binding SpecMid.Value}" Minimum="10.0" Maximum="999.99999" FormatString="F5"/>
+                    <xctk:DoubleUpDown Value="{Binding SpecMid.Value}" Minimum="10.0" Maximum="999.99999" FormatString="F5" FontSize="10"/>
                 </Viewbox>
                 <Viewbox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Stretch="Fill">
-                    <xctk:DoubleUpDown Value="{Binding SpecStep.Value}" Minimum="0.001" Maximum="10000.0" FormatString="F2"/>
+                    <xctk:DoubleUpDown Value="{Binding SpecStep.Value}" Minimum="0.001" Maximum="10000.0" FormatString="F2" FontSize="10"/>
                 </Viewbox>
                 <Viewbox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Stretch="Fill">
-                    <xctk:DoubleUpDown Value="{Binding SpecSteps.Value}" Minimum="5" Maximum="299" FormatString="F0"/>
+                    <xctk:DoubleUpDown Value="{Binding SpecSteps.Value}" Minimum="5" Maximum="299" FormatString="F0" FontSize="10"/>
                 </Viewbox>
 
-                <Frame Tag="Spectrum" Grid.Column="0" Grid.Row="4" Style="{StaticResource ControlButton}" Content="Analyzer" />
-                <Frame Tag="Waterfall" Grid.Column="1" Grid.Row="4" Style="{StaticResource ControlButton}" Content="Waterfall" />
+                <Frame Tag="Spectrum" Grid.Column="0" Grid.Row="4" Style="{StaticResource ControlButton}" Content="分析仪" />
+                <Frame Tag="Waterfall" Grid.Column="1" Grid.Row="4" Style="{StaticResource ControlButton}" Content="瀑布图" FontSize="4" />
 
-                <Frame Tag="Bar" Grid.Column="4" Grid.Row="1" Style="{StaticResource ControlButton}" Content="Bar" />
-                <Frame Tag="Line" Grid.Column="4" Grid.Row="2" Style="{StaticResource ControlButton}" Content="Line" />
-                <Frame Tag="Heat" Grid.Column="4" Grid.Row="3" Style="{StaticResource ControlButton}" Content="Heat" />
+                <Frame Tag="Bar" Grid.Column="4" Grid.Row="1" Style="{StaticResource ControlButton}" Content="条形图" FontSize="4" />
+                <Frame Tag="Line" Grid.Column="4" Grid.Row="2" Style="{StaticResource ControlButton}" Content="线形图" FontSize="4" />
+                <Frame Tag="Heat" Grid.Column="4" Grid.Row="3" Style="{StaticResource ControlButton}" Content="热力图" FontSize="4" />
 
 
                 <Viewbox Grid.Column="5" Grid.Row="1" Grid.RowSpan="3" Stretch="Fill">

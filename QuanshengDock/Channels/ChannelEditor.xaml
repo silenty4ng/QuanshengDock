@@ -97,7 +97,7 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <CheckBox Name="Defocusser" Width="0" Height="0" />
-            <TextBlock IsHitTestVisible="False" Grid.ColumnSpan="5" Text="Quansheng Channel Editor" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock IsHitTestVisible="False" Grid.ColumnSpan="5" Text="信道管理" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <DataGrid IsEnabled="{Binding EnableChanButtons.Value}" FontSize="{Binding ElementName=Magnify, Path=Value}" Name="ChannelGrid" VerticalGridLinesBrush="{x:Null}" Grid.Row="1" UnloadingRow="ChannelGrid_UnloadingRow" LoadingRow="ChannelGrid_LoadingRow" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" ItemsSource="{Binding Channels.Value}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
                 <DataGrid.RowHeaderStyle>
                     <Style>
@@ -146,22 +146,21 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="0.1*"/>
                 </Grid.ColumnDefinitions>
-                <Frame Foreground="{Binding ShowAllBrush.Value}" IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="ShowAll" Grid.Column="1" Style="{StaticResource ControlButton}" Content="Show All" />
-                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="ReadChannels" Grid.Column="2" Style="{StaticResource ControlButton}" Content="Read" />
-                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="WriteChannels" Grid.Column="3" Style="{StaticResource ControlButton}" Content="Write" />
-                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="LoadChannels" Grid.Column="4" Style="{StaticResource ControlButton}" Content="Load" />
-                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="SaveChannels" Grid.Column="5" Style="{StaticResource ControlButton}" Content="Save" />
-                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="CopyChannels" Grid.Column="6" Style="{StaticResource ControlButton}" Content="Copy" />
-                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="PasteChannels" Grid.Column="7" Style="{StaticResource ControlButton}" Content="Paste" />
-                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="Group" Grid.Column="8" Style="{StaticResource ControlButton}" Content="Group" />
-                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="Ungroup" Grid.Column="9" Style="{StaticResource ControlButton}" Content="Ungroup" />
-                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="RepeaterBook" Grid.Column="10" Style="{StaticResource ControlButton}" Content="Repeater&#10;Book" />
+                <Frame Foreground="{Binding ShowAllBrush.Value}" IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="ShowAll" Grid.Column="1" Style="{StaticResource ControlButton}" Content="显示所有" />
+                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="ReadChannels" Grid.Column="2" Style="{StaticResource ControlButton}" Content="读取" />
+                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="WriteChannels" Grid.Column="3" Style="{StaticResource ControlButton}" Content="写入" />
+                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="LoadChannels" Grid.Column="4" Style="{StaticResource ControlButton}" Content="加载" />
+                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="SaveChannels" Grid.Column="5" Style="{StaticResource ControlButton}" Content="保存" />
+                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="CopyChannels" Grid.Column="6" Style="{StaticResource ControlButton}" Content="复制" />
+                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="PasteChannels" Grid.Column="7" Style="{StaticResource ControlButton}" Content="粘贴" />
+                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="Group" Grid.Column="8" Style="{StaticResource ControlButton}" Content="编组" />
+                <Frame IsHitTestVisible="{Binding EnableChanButtons.Value}" Opacity="{Binding ChanButtonsOpacity.Value}" Tag="Ungroup" Grid.Column="9" Style="{StaticResource ControlButton}" Content="取消编组" />
                 <Frame Grid.Column="11" Grid.ColumnSpan="4" Style="{StaticResource ControlButton2}" Content="🔍" />
                 <Slider ValueChanged="Magnify_ValueChanged" Name="Magnify" Grid.Column="12" Grid.ColumnSpan="2" VerticalAlignment="Center" Value="12" Minimum="4" Maximum="25" LargeChange="1" SmallChange="1"/>
                 <Viewbox Grid.Column="15" Margin="0,9,0,9">
                     <TextBlock FontFamily="Calibri" Grid.Column="11" Text="{Binding ChEditMessage.Value}" Foreground="#FFC3C3C3"/>
                 </Viewbox>
-                <Frame MouseDown="Frame_MouseDown"  Grid.Column="16" Style="{StaticResource ControlButton}" Content="Close" />
+                <Frame MouseDown="Frame_MouseDown"  Grid.Column="16" Style="{StaticResource ControlButton}" Content="关闭" />
             </Grid>
         </Grid>
     </Border>

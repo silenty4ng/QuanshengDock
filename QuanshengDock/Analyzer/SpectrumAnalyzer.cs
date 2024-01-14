@@ -269,13 +269,13 @@ namespace QuanshengDock.Analyzer
         {
             ledColor.Value.Color = Radio.SpectrumMode ? Colors.Purple : Colors.DarkOrange;
             LCD.ClearLines(0, 7);
-            LCD.DrawText(8, 1, 1, Radio.SpectrumMode ? "Spectrum Analyzer" : "Waterfall", true);
+            LCD.DrawText(8, 1, 1, Radio.SpectrumMode ? "频谱分析仪" : "瀑布图", true);
             int spread = (steps / 2) * (int)step;
             double start = (mid - spread) / 100000.0;
             double end = (mid + spread) / 100000.0;
-            LCD.DrawText(8, 2, 1, $"{start:F5} to {end:F5}");
+            LCD.DrawText(8, 2, 1, $"{start:F5} 到 {end:F5}");
             if (hi > 0)
-                LCD.DrawText(8, 3, 0.75, $"High Signal: {hi:F5}");
+                LCD.DrawText(8, 3, 0.75, $"强信号: {hi:F5}");
             if (trigger.Value > 0)
             {
                 LCD.DrawText(8, 4, 1, "Monitor Active");

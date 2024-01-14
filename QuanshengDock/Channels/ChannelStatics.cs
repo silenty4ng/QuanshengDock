@@ -85,10 +85,10 @@ namespace QuanshengDock.Channels
                 foreach (var channel in GridChannel.SelectedChannels)
                     channels.Add(new(channel.Number - 1));
                 CopiedChannel.Clipboard = channels.ToArray();
-                DisplayMessage($"{channels.Count} channels copied");
+                DisplayMessage($"{channels.Count} 信道已复制");
             }
             else
-                DisplayMessage("No selected channels");
+                DisplayMessage("未选中信道");
         }
 
         public static void PasteChannels(int start)
@@ -103,11 +103,11 @@ namespace QuanshengDock.Channels
                     if (start == 200)
                         break;
                 }
-                DisplayMessage($"{cnt} channels pasted");
+                DisplayMessage($"{cnt} 信道已粘贴");
                 Refresh();
             }
             else
-                DisplayMessage("No copied channels");
+                DisplayMessage("未复制信道");
         }
 
         public static void SetDisplayed(bool all)
@@ -127,7 +127,7 @@ namespace QuanshengDock.Channels
 
         public static void EepromDataRead(int offset, byte[] data, int length)
         {
-            if (offset > 0) DisplayMessage($"Reading {(offset * 100) / 6992}%");
+            if (offset > 0) DisplayMessage($"读取中 {(offset * 100) / 6992}%");
             if (offset <= 3072)
             {
                 Array.Copy(data, 0, DataBytes, offset, length);
@@ -158,7 +158,7 @@ namespace QuanshengDock.Channels
                     return;
                 }
                 timeout = false;
-                DisplayMessage("Channels read from radio");
+                DisplayMessage("已从设备读出信道");
                 Radio.Invoke(() => {
                     enableChButts.Value = true;
                     Sanitize();
@@ -170,7 +170,7 @@ namespace QuanshengDock.Channels
 
         public static void EepromDataWritten(int offset)
         {
-            if (offset > 0) DisplayMessage($"Writing {(offset * 100) / 6992}%");
+            if (offset > 0) DisplayMessage($"写入中 {(offset * 100) / 6992}%");
             if (offset <= 3072)
             {
                 offset += 128;
@@ -206,7 +206,7 @@ namespace QuanshengDock.Channels
                     return;
                 }
                 timeout = false;
-                DisplayMessage("Channels written to radio");
+                DisplayMessage("信道已写入设备");
                 enableChButts.Value = true;
             }
         }
@@ -217,7 +217,7 @@ namespace QuanshengDock.Channels
             if (!timeout)
             {
                 Comms.SendHello();
-                DisplayMessage("Reading channel data");
+                DisplayMessage("读取信道数据中...");
                 enableChButts.Value = false;
                 Comms.SendCommand(Packet.ReadEeprom, (ushort)0, (ushort)128, Comms.TimeStamp);
                 _ = EepromTimeout(9000);
@@ -228,10 +228,10 @@ namespace QuanshengDock.Channels
         {
             if (!timeout)
             {
-                if (MessageBox.Show("Confirm write to radio?", "Quansheng Dock", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+                if (MessageBox.Show("确定将配置写入设备？", "Quansheng Dock", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
                 {
                     Comms.SendHello();
-                    DisplayMessage("Writing channel data");
+                    DisplayMessage("写入信道数据中...");
                     enableChButts.Value = false;
                     EepromDataWritten(-128);
                     _ = EepromTimeout(20000);
@@ -246,7 +246,7 @@ namespace QuanshengDock.Channels
             if(timeout)
             {
                 timeout = false;
-                DisplayMessage("Eeprom operation timed out");
+                DisplayMessage("写入配置超时");
                 enableChButts.Value = true;
             }
         }
@@ -256,7 +256,7 @@ namespace QuanshengDock.Channels
         {
             OpenFileDialog openFileDialog = new()
             {
-                Title = "Load channels from disk",
+                Title = "选择信道文件",
                 Filter = "CHAN Files|*.chan|All Files|*.*",
                 InitialDirectory = UserFolder.Dir
             };
@@ -276,10 +276,10 @@ namespace QuanshengDock.Channels
                     Sanitize();
                     FilterUsed();
                     Refresh();
-                    DisplayMessage("Channel file loaded");
+                    DisplayMessage("信道文件加载成功");
                 }
                 else
-                    DisplayMessage("File size error");
+                    DisplayMessage("文件大小错误");
             }
         }
 
@@ -287,7 +287,7 @@ namespace QuanshengDock.Channels
         {
             SaveFileDialog saveFileDialog = new()
             {
-                Title = "Save channels to disk",
+                Title = "保存信道文件",
                 Filter = "CHAN Files|*.chan|All Files|*.*",
                 InitialDirectory = UserFolder.Dir
             };
@@ -299,10 +299,10 @@ namespace QuanshengDock.Channels
                 }
                 catch
                 {
-                    DisplayMessage("Unable to write to file");
+                    DisplayMessage("写入文件失败");
                     return;
                 }
-                DisplayMessage("Channel file saved");
+                DisplayMessage("信道保存成功");
             }
         }
 

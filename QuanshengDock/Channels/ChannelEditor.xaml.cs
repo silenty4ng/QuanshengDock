@@ -117,6 +117,20 @@ namespace QuanshengDock.Channels
             e.Column.CanUserSort = false;
             switch (e.Column)
             {
+                case DataGridCheckBoxColumn:
+                    {
+                        DataGridCheckBoxColumn col = (DataGridCheckBoxColumn)e.Column;
+                        switch (e.PropertyName)
+                        {
+                            case "Reverse":
+                                col.Header = "倒频";
+                                break;
+                            case "BusyLock":
+                                col.Header = "遇忙禁发";
+                                break;
+                        }
+                    }
+                    break;
                 case DataGridTextColumn:
                     {
                         DataGridTextColumn col = (DataGridTextColumn)e.Column;
@@ -127,10 +141,15 @@ namespace QuanshengDock.Channels
                                 break;
                             case "TX":
                             case "RX":
+                                col.Header = e.PropertyName == "TX" ? "发射频率" : "接收频率";
                                 col.Binding = new Binding(e.PropertyName) { StringFormat = "F5" };
                                 break;
                             case "Number":
+                                col.Header = "序号";
                                 col.Binding = new Binding(e.PropertyName) { StringFormat = "D3" };
+                                break;
+                            case "Name":
+                                col.Header = "频道名称";
                                 break;
                         }
                     }
@@ -142,21 +161,46 @@ namespace QuanshengDock.Channels
                         {
                             case "RxCTCSS":
                             case "TxCTCSS":
+                                col.Header = e.PropertyName == "RxCTCSS" ? "接收模拟哑音" : "发射模拟哑音";
                                 col.ItemsSource = Beautifiers.Ctcss.Strings;
                                 col.SelectedItemBinding = new Binding(e.PropertyName) { Converter = Beautifiers.Ctcss };
                                 break;
                             case "RxDCS":
                             case "TxDCS":
+                                col.Header = e.PropertyName == "RxDCS" ? "接收数字哑音" : "发射数字哑音";
                                 col.ItemsSource = Beautifiers.Dcs.Strings;
                                 col.SelectedItemBinding = new Binding(e.PropertyName) { Converter = Beautifiers.Dcs };
                                 break;
                             case "Step":
+                                col.Header = "步进频率";
                                 col.ItemsSource = Beautifiers.Step.Strings;
                                 col.SelectedItemBinding = new Binding(e.PropertyName) { Converter = Beautifiers.Step };
                                 break;
                             case "Scramble":
+                                col.Header = "加密";
                                 col.ItemsSource = Beautifiers.Scramble.Strings;
                                 col.SelectedItemBinding = new Binding(e.PropertyName) { Converter = Beautifiers.Scramble };
+                                break;
+                            case "Bandwidth":
+                                col.Header = "带宽";
+                                break;
+                            case "Power":
+                                col.Header = "发射功率";
+                                break;
+                            case "RxTone":
+                                col.Header = "接收哑音";
+                                break;
+                            case "TxTone":
+                                col.Header = "发射哑音";
+                                break;
+                            case "Modulation":
+                                col.Header = "调制模式";
+                                break;
+                            case "Scanlists":
+                                col.Header = "扫描列表";
+                                break;
+                            case "Compand":
+                                col.Header = "压扩";
                                 break;
                         }
                     }

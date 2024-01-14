@@ -87,6 +87,7 @@ namespace QuanshengDock.UI
             point.X += hOffset.Value * 8;
             point.Y += vOffset.Value * 8;
             double em = 64 * height;
+            if (em > 120) em = 80;
             ScreenDraw((drawingContext) =>
             {
                 FormattedText ft = new(
